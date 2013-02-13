@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live DOM Objects</title>
+</head>
+<body>
+  <h1>Live DOM Objects</h1>
+  <button onclick="runTest()">Run Test</button>
+
+  <div>#1</div>
+  <div>#2</div>
+
+  <script type="text/javascript">
+    function runTest() {
+      var div, ndx, divs = document.getElementsByTagName("div");
+      /*
+      This despite appearances is an endless loop
+      Execute with caution
+       */
+      debugger;
+      for(ndx=0; ndx < divs.length; ndx++){
+        div = document.createElement("div");
+        /* every time we add a div to the page, divs.length increases */
+        document.body.appendChild(div);
+        debugger;
+      }
+    }
+  </script>
+</body>
+</html>
